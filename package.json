@@ -1,0 +1,15 @@
+{
+  "name": "whoiam",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "npm": "use pnpm",
+    "pnpm": ">=7",
+    "yarn": "use pnpm"
+  }
+}
