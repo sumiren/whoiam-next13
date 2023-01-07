@@ -6,12 +6,11 @@ export default function Home() {
   return (
     <main>
       <div>
-        <p className="mt-10 text-3xl">Hello Next.js こんにちは</p>
-        <Button>nice button</Button>
+        <p className="mt-10 text-3xl">Hello Next.js another page</p>
 
         <div className="mt-10">
-          <Link href="/another-page">
-            <Button color="green">go to another page</Button>
+          <Link href="/">
+            <Button color="green">go back</Button>
           </Link>
         </div>
       </div>
