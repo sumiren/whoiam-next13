@@ -1,0 +1,12 @@
+# dir
+.next
+out
+build
+coverage
+
+# files
+next-env.d.ts
+
+# ext
+*.md
+
