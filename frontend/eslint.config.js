@@ -1,13 +1,13 @@
-const typescriptPlugin = require("@typescript-eslint/eslint-plugin")
-const typescriptParser = require ('@typescript-eslint/parser')
+const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
+const typescriptParser = require("@typescript-eslint/parser");
 const FlatCompat = require("@eslint/eslintrc").FlatCompat;
 
-const compat = new FlatCompat()
+const compat = new FlatCompat();
 
 const config = [
   "eslint:recommended",
   {
-    ignores: [".next/**/*"]
+    ignores: [".next/**/*"],
   },
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -19,7 +19,7 @@ const config = [
       },
     },
     plugins: {
-      "@typescript-eslint": typescriptPlugin
+      "@typescript-eslint": typescriptPlugin,
     },
     rules: {
       ...typescriptPlugin.configs["eslint-recommended"].rules,
@@ -29,6 +29,6 @@ const config = [
   },
   ...compat.extends("next/core-web-vitals"),
   ...compat.extends("prettier"),
-]
+];
 
-module.exports = config
+module.exports = config;
