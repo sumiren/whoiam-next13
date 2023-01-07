@@ -1,6 +1,8 @@
+"use client"
 import './globals.css'
 import React from "react";
 import { Noto_Sans_Javanese } from '@next/font/google'
+import MantineEmotionProvider from "./mantine-emotion-provider";
 
 const font = Noto_Sans_Javanese({ subsets: ['javanese'] })
 
@@ -12,7 +14,11 @@ export default function RootLayout({
   return (
     <html lang="ja" className={font.className}>
       <head />
-      <body>{children}</body>
+      <body>
+        <MantineEmotionProvider>
+          {children}
+        </MantineEmotionProvider>
+      </body>
     </html>
   )
 }
