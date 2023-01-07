@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write '**/*.{ts,tsx,js}' && eslint . --fix --no-error-on-unmatched-pattern --max-warnings 0",
-    "ci:lint": "prettier --check '**/*.{ts,tsx,js}' && eslint . --no-error-on-unmatched-pattern --max-warnings 0"
+    "ci:lint": "prettier --check '**/*.{ts,tsx,js}' && eslint . --no-error-on-unmatched-pattern --max-warnings 0",
+    "test": "vitest",
+    "ci:test": "vitest run --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -31,10 +33,14 @@
     "@eslint/eslintrc": "^1.4.1",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "@vitejs/plugin-react": "^3.0.1",
+    "@vitest/coverage-c8": "^0.26.3",
     "autoprefixer": "^10.4.13",
     "eslint-config-prettier": "^8.6.0",
+    "jsdom": "^20.0.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.1",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "vitest": "^0.26.3"
   }
 }
