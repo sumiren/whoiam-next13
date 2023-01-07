@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.9.0
+      - run: pnpm install
+      - run: pnpm --prefix frontend ci:lint
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.9.0
+      - run: pnpm install
+      - run: pnpm --prefix frontend ci:test
+      - run: cd ./frontend
+      - name: report coverage
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v1
+        with:
+          vite-config-path: ./frontend/vitest.config.ts
+          json-summary-path: ./frontend/coverage/coverage-summary.json
+          json-final-path: ./frontend/coverage/coverage-final.json
